@@ -24,7 +24,7 @@ function App() {
      <div>
       <h1>Weather App</h1>
       {/**Formulario de busqueda */}
-        <input type="text" placeholder="Escribe aqui tu ciudad" value={ciudad} onChange={(e)=> setCiudad(e.target.value)}/>
+        <input type="text" placeholder="Escribe aqui tu ciudad" value={ciudad} onChange={(e)=> setCiudad(e.target.value)} onKeyDown={(e)=>e.key === 'Enter' &&obtenerTiempo()}/>
         <button onClick={obtenerTiempo}>Buscar</button>
         {/**Resultado: solo se muestra si tiempo tiene datos */}
         {tiempo && (
